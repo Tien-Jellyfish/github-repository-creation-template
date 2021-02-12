@@ -2,6 +2,7 @@
 
 # Variable
 private="true"
+auto_init="true"
 
 print_usage() {
   echo "        Please use these supported flags below to provide input:"
@@ -39,7 +40,7 @@ else
   echo "Creating repository $repo_name for $repo_owner organization"
   echo "Please wait for a few seconds..."
   sleep 1
-  gh api /orgs/$repo_owner/repos --silent -F name="$repo_name" -F private="$private"
+  gh api /orgs/$repo_owner/repos --silent -F name="$repo_name" -F private="$private" -F auto_init="$auto_init"
   echo "Github repository has been created successfully."
 fi
 
